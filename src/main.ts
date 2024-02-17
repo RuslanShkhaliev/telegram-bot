@@ -1,11 +1,7 @@
-import { menuCommands } from '@/common/keyboards';
+import { config } from '@/config';
+import { publicRouter } from '@/router';
+import { menuCommands } from '@common/keyboards';
 import { Telegraf } from 'telegraf';
-import { config } from './config';
-import { publicRouter } from './router';
-// система ролей:
-// 1. admin - пользователь с определенным id
-// 2. public - права по умолчанию
-// 3. restricted user - пользователи с ограниченными правами
 
 const main = async () => {
 	const bot = new Telegraf(config.apiKey);
