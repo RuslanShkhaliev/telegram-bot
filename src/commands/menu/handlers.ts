@@ -1,6 +1,6 @@
 import path from 'path';
-import { menuKeyboard } from 'src/keyboards';
 import { Context, Input } from 'telegraf';
+import { menuKeyboard } from './keyboards';
 
 export const mainMenuHandler = (ctx: Context) => {
 	ctx.reply('Главное меню', {
@@ -22,4 +22,13 @@ export const paymentHandler = async (ctx: Context) => {
 
 export const makeAppointmentHandler = (ctx: Context) => {
 	ctx.telegram.sendMessage(ctx.chat?.id as number, 'Записаться');
+};
+
+export const backToMainMenuHandler = (ctx: Context) => {
+	ctx.reply('Главное меню', {
+		reply_markup: {
+			keyboard: menuKeyboard,
+			resize_keyboard: true,
+		},
+	});
 };
