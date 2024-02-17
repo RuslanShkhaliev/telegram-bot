@@ -1,6 +1,6 @@
-import { CONTACTS } from 'src/commands/contacts/constants';
-import { contactsKeyboard } from 'src/keyboards/contacts.kb';
 import { Context } from 'telegraf';
+import { CONTACTS } from './constants';
+import { contactsKeyboard } from './keyboards';
 
 export const contactsHandler = (ctx: Context) => {
 	ctx.reply('Контакты', {
